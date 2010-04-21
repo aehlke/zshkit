@@ -5,7 +5,7 @@ export ALT_X11_DIR="/opt/X11"
 # XCode 	: http://developer.apple.com/technologies/tools/xcode.html
 export APPLE_DEVELOPER_DIR="/Developer/usr"
 # Intel C++ : http://software.intel.com/en-us/intel-compilers
-export INTEL_DIR="/opt/intel/Compiler/11.1/084"
+export INTEL_DIR="/opt/intel/Compiler/11.1/058"
 # LaTeX
 export LATEX_BIN_DIR="/usr/texbin"
 # MacPorts 	: http://www.macports.org
