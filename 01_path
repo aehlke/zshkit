@@ -1,80 +1,40 @@
-# Ada 4.4 	: http://homepage.mac.com/WebObjects/FileSharing.woa/wa/default?user=awreynolds&templatefn=FileSharing7.html&xmlfn=TKDocument.7.xml&sitefn=RootSite.xml&aff=consumer&cty=US&lang=en
-export ADA_DIR="/opt/ada-4.4"
-# X11 		: http://xquartz.macosforge.org/trac/wiki
-export ALT_X11_DIR="/opt/X11"
 # XCode 	: http://developer.apple.com/technologies/tools/xcode.html
 export APPLE_DEVELOPER_DIR="/Developer/usr"
-# Intel C++ : http://software.intel.com/en-us/intel-compilers
-export INTEL_DIR="/opt/intel/Compiler/11.1/058"
-# LaTeX
-export LATEX_BIN_DIR="/usr/texbin"
-# MacPorts 	: http://www.macports.org
-export MACPORTS_DIR="/opt/local"
 # Manually
 export MANUALLY_INSTALLED_DIR="/usr/local"
+# Macports
+export MACPORTS_DIR="/opt/local"
 # My Applications
 export MY_APPLICATIONS_DIR="$HOME/Applications"
-# My Projects
-export PROJECTS_DIR="$HOME/Documents/Projects"
-# SandBox
-export SANDBOX_DIR="$HOME/SandBox"
+# Dev workspace
+export MY_WORKSPACE_DIR = "$HOME/workspace"
 # Official X11
 export X11_DIR="/usr/X11"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
 
-# Android 		: http://developer.android.com/sdk/index.html
-export ANDROID_DIR="$MY_APPLICATIONS_DIR/Android"
-# ASM Framework : http://asm.ow2.org 
-export ASM_DIR="$MY_APPLICATIONS_DIR/ASM-3.2/"
-# Apache Felix 	: http://felix.apache.org/site/index.html
-export FELIX_DIR="$MY_APPLICATIONS_DIR/Felix/"
-# IDA 			: http://www.hex-rays.com/idapro
-export IDA_DIR="$MANUALLY_INSTALLED_DIR/bin/idaadv"
-# QT4
-export QT_DIR="$MACPORTS_DIR/libexec/qt4-mac"
-# VisualVM		: https://visualvm.dev.java.net
-export VISUALVM_DIR="$MY_APPLICATIONS_DIR/VisualVM/"
+# HomeBrew
+#TODO
+
 # Java 1.6 Home on Mac OS X
 export JAVA_HOME="/Library/Java/Home"
-# QT4 
-export QTDIR="$QT_DIR/lib"
 # Swap folder on Mac OS X
 export SWAP_DIR="/var/vm/"
-# JOnAS
-export JONAS_ROOT="$MY_APPLICATIONS_DIR/JOnAS"
-export JONAS_BASE="$MY_APPLICATIONS_DIR/JOnAS_BASE"
-# Griffon
-export GRIFFON_HOME="$MACPORTS_DIR/share/java/griffon"
-# Grails
-export GRAILS_HOME="$MACPORTS_DIR/share/java/grails"
 
 
 # Some usefull paths (cd ~D)
 # My Documents
 export D="$HOME/Documents"
-# My Blog
-export B="$D/Blog"
 # My Downloads
 export DL="$HOME/Downloads"
-# My Projects
-export P="$PROJECTS_DIR"
-# Alias for SandBox
-export SB="$SANDBOX_DIR"
+# My Workspace
+export W="$MY_WORKSPACE_DIR"
 # This project
-export Z="$PROJECTS_DIR/my_zshkit"
-# NetBeans Projects
-export NBP="$HOME/NetBeansProjects"
-# XCode Projects
-export XC="$HOME/XCode"
-# Eclipse Projects
-export E="$HOME/Workspace"
-# Research Project
-export RP="$NBP/Research_Project"
+export Z="$MY_WORKSPACE_DIR/zshkit"
 
 # PATH
-export PATH="$ALT_X11_DIR/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$LATEX_BIN_DIR:$APPLE_DEVELOPER_DIR/bin:$APPLE_DEVELOPER_DIR/sbin:$INTEL_DIR/bin/intel64:$INTEL_DIR/bin:$ANDROID_DIR/tools:$MY_APPLICATIONS_DIR:$VISUALVM_DIR/bin:$IDA_DIR:$QT_DIR/bin:$JONAS_ROOT/bin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:$ADA_DIR/bin:."
-export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:$INTEL_DIR/man:$APPLE_DEVELOPER_DIR/share/man:$ALT_X11_DIR/man:$ALT_X11_DIR/share/man:$ADA_DIR/man:/usr/share/man"
+export PATH="$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$MY_APPLICATIONS_DIR:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:."
+export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
 export CDPATH="$MY_APPLICATIONS_DIR:$P:$D:$DL:$SB:$NBP:$RP:$VOLUMES_DIR:$HOME"
 
