@@ -44,12 +44,11 @@ export SWAP_DIR="/var/vm/"
 # JOnAS
 export JONAS_ROOT="$MY_APPLICATIONS_DIR/JOnAS"
 export JONAS_BASE="$MY_APPLICATIONS_DIR/JOnAS_BASE"
-# JRebel
-export JREBEL_HOME="$MY_APPLICATIONS_DIR/ZeroTurnaround/JRebel"
 # Griffon
 export GRIFFON_HOME="$MACPORTS_DIR/share/java/griffon"
 # Grails
 export GRAILS_HOME="$MACPORTS_DIR/share/java/grails"
+
 
 # Some usefull paths (cd ~D)
 # My Documents
