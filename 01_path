@@ -1,3 +1,21 @@
+
+#
+# Set Locale
+#
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+#
+# Homebrew
+#
+if [[ -x `which brew` ]]; then
+  export HOMEBREW_PATH=$HOME/.homebrew
+  export PATH=${HOMEBREW_PATH}/bin:${HOMEBREW_PATH}/sbin:$PATH
+fi
+
+# Set git env
+#export GIT_PAGER="mate"
+
 # XCode 	: http://developer.apple.com/technologies/tools/xcode.html
 export APPLE_DEVELOPER_DIR="/Developer/usr"
 # Manually
@@ -40,3 +58,10 @@ export CDPATH="$MY_APPLICATIONS_DIR:$P:$D:$DL:$SB:$NBP:$RP:$VOLUMES_DIR:$HOME"
 
 
 
+#
+# Add Homebrew man path
+#
+#if [[ -x `which brew` ]]; then
+#  export MANPATH="/usr/local/share/man:$MANPATH"
+#  manpath=($HOME/.homebrew/share/man /usr/share/man /usr/local/share/man $manpath )
+#fi

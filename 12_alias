@@ -24,6 +24,12 @@ alias cpu_hogs='ps wwaxr -o pid,stat,%cpu,time,command | head -20'
 #alias eject='hdiutil eject'
 #
 # Copy the working dir to the clipboard
-alias cpwd='pwd | xargs echo -n | pbcopy'
 
+if [[ -x `which pbpaste` ]]; then
+  alias pcd="cd '`pbpaste`'"
+fi
+if [[ -x `which pbcopy` ]]; then
+  #alias cpwd="pwd | pbcopy"
+  alias cpwd='pwd | xargs echo -n | pbcopy'
+fi
 
