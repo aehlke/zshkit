@@ -1,2 +1,0 @@
-# Options for Maven
-export MAVEN_OPTS="-Xmx1024m"

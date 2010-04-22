@@ -1,7 +1,7 @@
 # Some SSH/Telnet acces
-alias ensisun='ssh gelibera@ensisun.imag.fr'
-alias nas_local='ssh root@diskstation.local'
-alias nas_telnet='telnet diskstation.local'
+#alias ensisun='ssh gelibera@ensisun.imag.fr'
+#alias nas_local='ssh root@diskstation.local'
+#alias nas_telnet='telnet diskstation.local'
 
 function exportkey()
 {

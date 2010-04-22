@@ -6,7 +6,7 @@ zfinit
 
 autoload -U zmv
 
-# Change hostname color on knowm hosts
+# Change hostname color on known hosts
 # I put this here, because host doesn't change during a session
 case ${HOST%%.*} in
 	my-Desktop) local host_color="${fg[yellow]}" ;;
