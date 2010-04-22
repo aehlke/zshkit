@@ -17,6 +17,7 @@ zstyle ':completion:*' list-grouped true # If this style is ‘true’ (the defa
 zstyle ':completion:*' list-packed true # This is tested for each tag valid in the current context as well as the default tag. If it is set to ‘true’, the corresponding matches appear in listings as if the LIST_PACKED option were set.
 zstyle ':completion:*' verbose true # If set, as it is by default, the completion listing is more verbose. In particular many commands show descriptions for options if this style is ‘true’.
 zstyle ':completion:*' completer _complete _prefix _match _approximate _ignored # The strings given as the value of this style provide the names of the completer functions to use.
+# _expand
 
 zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'm:{a-zA-Z}={A-Za-z}' 
 zstyle ':completion:*' ignore-parents parent pwd
@@ -26,7 +27,14 @@ zstyle ':completion:*' auto-description 'specify: %d'
 
 
 # Enable menu completion
-zstyle ':completion*:default' menu 'select=1' # In the form ‘select=num’, menu selection will only be started if there are at least num matches
+#zstyle ':completion*:default' menu 'select=1' # In the form ‘select=num’, menu selection will only be started if there are at least num matches
+if [[ -z "$NOMENU" ]] ; then
+  # if there are more than 5 options allow selecting from a menu
+  zstyle ':completion:*' menu select=5
+else
+  # don't use any menus at all
+  setopt NO_AUTO_MENU
+fi
  
 # allow approximate matching
 zstyle ':completion:*:corrections' format '%U%B%d (errors: %e)%b%u'
@@ -40,12 +48,12 @@ zstyle ':completion:*:prefix:*' add-space true
 zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.(o|c~|zwc)' '*?~'
  
 # only java files for javac
-zstyle ':completion:*:javac:*' files '*.java' 
+#zstyle ':completion:*:javac:*' files '*.java' 
 # no binary files for vi or textmate
 zstyle ':completion:*:vi:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
-zstyle ':completion:*:mate:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+#zstyle ':completion:*:mate:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 zstyle ':completion:*:vim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
-zstyle ':completion:*:gvim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
+#zstyle ':completion:*:gvim:*' ignored-patterns '*.(o|a|so|aux|dvi|log|swp|fig|bbl|blg|bst|idx|ind|out|toc|class|pdf|ps|pyc)'
 # no binary files for less
 zstyle ':completion:*:less:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
 zstyle ':completion:*:zless:*' ignored-patterns '*.(o|a|so|dvi|fig|out|class|pdf|ps|pyc)'
@@ -55,8 +63,8 @@ zstyle ':completion:*:xpdf:*' files '*.pdf'
 zstyle ':completion:*:tar:*' files '*.tar|*.tgz|*.tz|*.tar.Z|*.tar.bz2|*.tZ|*.tar.gz'
 # latex to the fullest
 # for printing
-zstyle ':completion:*:xdvi:*' files '*.dvi'
-zstyle ':completion:*:dvips:*' files '*.dvi'
+#zstyle ':completion:*:xdvi:*' files '*.dvi'
+#zstyle ':completion:*:dvips:*' files '*.dvi'
 # Group relatex matches:
 zstyle ':completion:*:-command-:*:(commands|builtins|reserved-words-aliases)' group-name commands
 # Separate man page sections
@@ -64,6 +72,19 @@ zstyle ':completion:*:manuals' seperate-sections true
 # Give long completion options in a list. tab to advance.
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
+zstyle ':completion:*:warnings' format $'%{\e[0;31m%}No matches for:%{\e[0m%} %d'
+#'%BNo matches for: %d%b'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion:*:windows' menu on=0
+
+
+# Ignore completion functions for commands you don't have:
+zstyle ':completion:correct:' prompt 'correct to: %e'
+zstyle ':completion::(^approximate*):*:functions' ignored-patterns '_*'
+
+
+# caching
+[ -d $ZSHDIR/cache ] \
+&& zstyle ':completion:*' use-cache yes \
+&& zstyle ':completion::complete:*' cache-path $ZSHDIR/cache/
+
