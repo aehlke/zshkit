@@ -1,6 +1,6 @@
 if [[ -x `which gls` ]]; then
     alias rls=`which ls`
-    alias ls='gls -h --color=auto '
+    alias ls='gls -GFh --color=auto --hide="*.pyc"'
 elif [[ $(uname) == 'FreeBSD' || $OSTYPE[1,6] == "darwin" ]]; then
     export CLICOLOR="yes"
     export LSCOLORS='ExfxcxdxbxEgEdabagacad'
@@ -20,7 +20,7 @@ fi
 # -t : Sort by time modified (most recently modified first) before sorting the operands by lexicographical order.
 # -t : Reverse the order of the sort to get reverse lexicographical order or the oldest entries first (or largest files last, if combined with sort by size
 alias l='ls'
-alias ls='ls -GFh'
+#alias ls='ls -GFh'
 alias la='ls -a'
 alias ll='ls -l'
 #alias le='ll -e'

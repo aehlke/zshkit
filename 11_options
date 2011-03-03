@@ -19,7 +19,7 @@ setopt CDABLE_VARS				# If the argument to a cd command (or an implied cd with t
 setopt CHASE_LINKS				# Resolve symbolic links to their true values when changing directory. 
 unsetopt CLOBBER				# NO -> Allows `>' redirection to truncate existing files, and `>>' to create files. Otherwise `>!' or `>|' must be used to truncate a file, and `>>!' or `>>|' to create a file.
 setopt COMPLETE_IN_WORD			# If unset, the cursor is moved to the end of the word if completion is started. Otherwise it stays where it is and completion is done from both ends.
-setopt CORRECT					# Try to correct the spelling of commands. 
+#setopt CORRECT					# Try to correct the spelling of commands. 
 #setopt CORRECT_ALL				# Try to correct the spelling of all arguments in a line.
 setopt EXTENDED_GLOB			# Treat the `#', `~' and `^' characters as part of patterns for filename generation, etc.
 setopt EXTENDED_HISTORY			# Save each command's beginning timestamp (in seconds since the epoch) and the duration (in seconds) to the history file.

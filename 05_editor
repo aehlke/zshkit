@@ -19,27 +19,34 @@ elif [[ -x `which gvim` ]]; then
     export CVSEDITOR="gvim -f"
 elif [[ -x `which vim` ]]; then
     export EDITOR="vim"
-elif [[ -x `which vi` ]]; then
-    export EDITOR="vi"  
-elif [[ -x `which nano` ]]; then
-	export EDITOR="nano"
-elif [[ -x `which pico` ]]; then
-	export EDITOR="pico"
+#elif [[ -x `which vi` ]]; then
+#    export EDITOR="vi"  
+#elif [[ -x `which nano` ]]; then
+#    export EDITOR="nano"
+#elif [[ -x `which pico` ]]; then
+#    export EDITOR="pico"
 else
 	export EDITOR="vi"
 fi
- 
+
 # Set EDITOR as default for plaintext stuff
 for s in txt tex c cc cxx cpp gp m md markdown otl; do
 	alias -s $s=$EDITOR
 done
- 
+
 # Abuse the "open" command on OS X
 if [[ $OSTYPE[1,6] == "darwin" ]]; then
-	for s in mp3 wav aac \
-		ogg avi mp4 m4v mov qt mpg mpeg \
+	#for s in mp3 wav aac \
+	#    ogg avi mp4 m4v mov qt mpg mpeg \
+	#    jpg jpeg png psd bmp gif tif tiff \
+	#    eps ps pdf html dmg; do
+	#    alias -s $s=open
+	#done
+	for s in mp3 wav \
+		avi mp4 m4v mov mpg mpeg \
 		jpg jpeg png psd bmp gif tif tiff \
-		eps ps pdf html dmg; do
+		ps pdf html dmg; do
 		alias -s $s=open
 	done
 fi
+

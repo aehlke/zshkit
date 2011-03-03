@@ -3,3 +3,8 @@ local mydir=`dirname $0`
 for f in $mydir/??_*; do
 source $f
 done
+
+# virtualenvwrapper
+export PIP_RESPECT_VIRTUALENV=true
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+source /usr/local/Cellar/python/2.7/bin/virtualenvwrapper.sh

@@ -1,5 +1,7 @@
 # vim: ft=zsh tabstop=2 softtabstop=2 shiftwidth=2
 
+#emacs bindings
+bindkey -e
 #bindkey -v
 #bindkey "$key[Up]" up-line-or-search
 #bindkey "$key[Down]" down-line-or-search

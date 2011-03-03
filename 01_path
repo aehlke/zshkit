@@ -5,6 +5,13 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+export ZSHDIR="$HOME/.zsh"
+
+#
+# Virtualenvwrapper
+#
+export WORKON_HOME=$HOME/.virtualenvs
+
 #
 # Homebrew
 #
@@ -25,11 +32,12 @@ export MACPORTS_DIR="/opt/local"
 # My Applications
 export MY_APPLICATIONS_DIR="$HOME/Applications"
 # Dev workspace
-export MY_WORKSPACE_DIR = "$HOME/workspace"
+export MY_WORKSPACE_DIR="$HOME/workspace"
 # Official X11
 export X11_DIR="/usr/X11"
 # Mounted volumes
 export VOLUMES_DIR="/Volumes"
+
 
 # HomeBrew
 #TODO
@@ -51,11 +59,14 @@ export W="$MY_WORKSPACE_DIR"
 export Z="$MY_WORKSPACE_DIR/zshkit"
 
 # PATH
-export PATH="$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:$MY_APPLICATIONS_DIR:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:."
+export PATH="$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:."
 export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:/usr/share/man"
 export FPATH="$HOME/.zsh/func:$FPATH"
-export CDPATH="$MY_APPLICATIONS_DIR:$P:$D:$DL:$SB:$NBP:$RP:$VOLUMES_DIR:$HOME"
+export CDPATH=""
+#"$P:$D:$DL:$SB:$NBP:$RP:$VOLUMES_DIR:$HOME"
 
+# git path
+export PATH="/usr/local/git/bin:$PATH"
 
 
 #

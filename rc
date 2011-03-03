@@ -1,10 +1,27 @@
 # By default, all created elements are rwx______
-umask 077
+#umask 077
+autoload -Uz vcs_info
 
 autoload -Uz zfinit 
 zfinit
 
 autoload -U zmv
+
+
+# Tmux stuff
+# force 256 color mode
+#alias tmux='tmux -2'
+#alias screen='TERM=xterm-color && /opt/local/bin/screen'
+#alias todo='gvim ~/vimwiki/ToDo.wiki'
+
+
+# https://github.com/sjl/z-zsh
+source $HOME/.zshkit/z-zsh/z.sh
+function precmd () {
+    z --add "$(pwd -P)"
+}
+
+
 
 # Change hostname color on known hosts
 # I put this here, because host doesn't change during a session
@@ -15,11 +32,55 @@ case ${HOST%%.*} in
 	*)          local host_color="${fg_bold[red]}" ;;
 esac
 
+  # Color for decorations
+  local deco="%{${fg_bold[black]}%}"
+
+  # Change path color gieven user rights on it
+  if [[ -O "${PWD}" ]]; then # owner
+    local path_color="${fg_no_bold[default]}"
+  elif [[ -w "${PWD}" ]]; then # can write
+    local path_color="${fg_no_bold[blue]}"
+  else # other
+    local path_color="${fg_no_bold[red]}"
+  fi
+
 # No coloration
-local nc="%{$reset_color%}"
+#local nc="%{$reset_color%}"
+
+
+# zgitinit and prompt_wunjo_setup must be somewhere in your $fpath, see README for more.
+
+#setopt promptsubst
+
+## Load the prompt theme system
+#autoload -U promptinit
+#promptinit
+
+## Use the git-zsh prompt theme
+#prompt zsh-git
+
+
 
 function precmd
 {	
-	vcs_info;
-  	PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_} "
+#	vcs_info;
+#  	PS1="%{${fg[magenta]}%}%n ${nc}at %{${host_color}%}%m${nc} in %{$fg[green]%}%~${nc} ${vcs_info_msg_0_} "
+vcs_info;
+
+
+  # Display return code when not 0
+  local return_code="%(?..${deco}!%{${fg_no_bold[red]}%}%?${deco}! )"
+  # user@host
+  local user_at_host="%{${fg_bold[default]}%}%n${deco}@%{${host_color}%}%m"
+  # Red # for root, plain % for user
+  local sign="%(!.%{${fg_bold[red]}%}.${deco})%#"
+
+  # Set the prompt
+  #PS1="${return_code}${deco}[${user_at_host} ${cwd}${deco}] ${sign}%{${reset_color}%} "
+#PS1="%# '${vcs_info_msg_0_}'"
+  #PS1="%T%B[%~]%b${return_code}${deco}[${user_at_host} ${deco}] ${sign}%{${reset_color}%} "
+  #PS1="%T%B[%~]%b${return_code}${deco}[${user_at_host} ${deco}] `git-prompt` ${sign}%{${reset_color}%} "
+
+#%B[%n:%l]%b %(0?##%S{%?}%s )%S%m%s%# "
+
 }
