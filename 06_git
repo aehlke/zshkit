@@ -1,5 +1,13 @@
 #TODO get zgit
 
+# Enable bash completion for git
+# # This allows git-completion to work properly
+autoload bashcompinit
+bashcompinit
+
+source `brew prefix`/etc/git-completion.d
+
+
 if [[ -x `which git` ]];
 then
 	alias g='git'
