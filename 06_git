@@ -5,7 +5,7 @@
 autoload bashcompinit
 bashcompinit
 
-source `brew prefix`/etc/git-completion.d
+#source `brew prefix`/etc/git-completion.d
 
 
 if [[ -x `which git` ]];
