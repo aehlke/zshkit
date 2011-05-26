@@ -1,3 +1,13 @@
+# Autoload zsh functions.
+#autoload -U ~/.zsh/func/*(:t)
+
+# Enable auto-execution of functions.
+typeset -ga preexec_functions
+typeset -ga precmd_functions
+typeset -ga chpwd_functions
+
+
+
 local mydir=`dirname $0`
 
 for f in $mydir/??_*; do
