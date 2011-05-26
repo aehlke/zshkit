@@ -1,3 +1,9 @@
-[submodule "gist-860763"]
-	path = gist-860763
-	url = git://gist.github.com/860763.git
+[submodule "992798"]
+	path = 992798
+	url = git@gist.github.com:992798.git
+[submodule "gists/992798"]
+	path = gists/992798
+	url = git@gist.github.com:992798.git
+[submodule "gists/growl-hooks"]
+	path = gists/growl-hooks
+	url = git@gist.github.com:992798.git
