@@ -25,22 +25,12 @@ fi
 
 # XCode 	: http://developer.apple.com/technologies/tools/xcode.html
 export APPLE_DEVELOPER_DIR="/Developer/usr"
-# Manually
 export MANUALLY_INSTALLED_DIR="/usr/local"
-# Macports
 export MACPORTS_DIR="/opt/local"
-# My Applications
 export MY_APPLICATIONS_DIR="$HOME/Applications"
-# Dev workspace
 export MY_WORKSPACE_DIR="$HOME/workspace"
-# Official X11
 export X11_DIR="/usr/X11"
-# Mounted volumes
 export VOLUMES_DIR="/Volumes"
-
-
-# HomeBrew
-#TODO
 
 # Java 1.6 Home on Mac OS X
 export JAVA_HOME="/Library/Java/Home"
@@ -49,18 +39,17 @@ export SWAP_DIR="/var/vm/"
 
 
 # Some usefull paths (cd ~D)
-# My Documents
 export D="$HOME/Documents"
-# My Downloads
 export DL="$HOME/Downloads"
-# My Workspace
 export W="$MY_WORKSPACE_DIR"
 # This project
 export Z="$MY_WORKSPACE_DIR/zshkit"
 
 # PATH
-export PATH="$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:."
+export PATH="$HOMEBREW_PATH/bin:$MANUALLY_INSTALLED_DIR/bin:$MANUALLY_INSTALLED_DIR/sbin:$MACPORTS_DIR/bin:$MACPORTS_DIR/sbin:/bin:/sbin:/usr/bin:/usr/sbin:$X11_DIR/bin:."
+
 export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11_DIR/share/man:$MANUALLY_INSTALLED_DIR/man:$MANUALLY_INSTALLED_DIR/share/man:/usr/share/man"
+
 export FPATH="$HOME/.zsh/func:$FPATH"
 export CDPATH=""
 #"$P:$D:$DL:$SB:$NBP:$RP:$VOLUMES_DIR:$HOME"
