@@ -19,10 +19,10 @@ setopt PROMPT_SUBST
 
 
 # https://github.com/sjl/z-zsh
-source $HOME/.zshkit/z-zsh/z.sh
-function precmd () {
-    z --add "$(pwd -P)"
-}
+#source $HOME/.zshkit/z-zsh/z.sh
+#function precmd () {
+#    z --add "$(pwd -P)"
+#}
 
 
 
