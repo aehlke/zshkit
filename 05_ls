@@ -1,3 +1,4 @@
+# Use gls if we've got it (ls from gnu coreutils)
 if [[ -x `which gls` ]]; then
     alias rls=`which ls`
     alias ls='gls -GFh --color=auto --hide="*.pyc"'
@@ -27,3 +28,4 @@ alias ll='ls -l'
 #alias lla='ls -la'
 #alias lm='ls -la | more'
 alias lt='ls -ltr'
+

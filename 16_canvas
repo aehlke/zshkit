@@ -1,0 +1,18 @@
+. /var/canvas/.bashrc
+#alias ls="gls"
+#alias l="ls"
+#alias ll="ls -l"
+#alias ..="cd .."
+
+
+
+# Python
+export PATH="/usr/local/share/python:/usr/local/Cellar/python/2.7.2/bin:$PATH"
+
+export JAVA_HOME="$(/usr/libexec/java_home)"
+export EC2_PRIVATE_KEY="$(/bin/ls /var/canvas/.ec2/pk-*.pem | /usr/bin/head -1)"
+export EC2_CERT="$(/bin/ls /var/canvas/.ec2/cert-*.pem | /usr/bin/head -1)"
+export AWS_RDS_HOME="/usr/local/Library/LinkedKegs/rds-command-line-tools/jars"
+export EC2_REGION="us-east-1"
+export AWS_AUTO_SCALING_HOME="/usr/local/Library/LinkedKegs/auto-scaling/jars"
+
