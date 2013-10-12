@@ -11,16 +11,8 @@ export ZSHDIR="$HOME/.zsh"
 # Virtualenvwrapper
 #
 #export WORKON_HOME=$HOME/.virtualenvs
-export WORKON_HOME="/Volumes/Canvas Repos/virtualenvs"
+export WORKON_HOME="/Users/alexehlke/.virtualenvs"
 
-
-#
-# Homebrew
-#
-if [[ -x `which brew` ]]; then
-  export HOMEBREW_PATH=$HOME/.homebrew
-  export PATH=${HOMEBREW_PATH}/bin:${HOMEBREW_PATH}/sbin:$PATH
-fi
 
 # Set git env
 #export GIT_PAGER="mate"
@@ -54,12 +46,6 @@ export MANPATH="$MACPORTS_DIR/man:$MACPORTS_DIR/share/man:$X11_DIR/man:$X11_DIR/
 export FPATH="$HOME/.zsh/func:$FPATH"
 export CDPATH=""
 #"$P:$D:$DL:$SB:$NBP:$RP:$VOLUMES_DIR:$HOME"
-
-# git path
-export PATH="/usr/local/git/bin:$PATH"
-
-# homebrew python
-export PATH="/usr/local/share/python:$PATH"
 
 #
 # Add Homebrew man path

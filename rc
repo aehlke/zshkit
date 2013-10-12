@@ -10,6 +10,8 @@ autoload -U zmv
 # Allow for functions in the prompt.
 setopt PROMPT_SUBST
 
+local mydir=`dirname $0`
+source $mydir/path
 
 # Tmux stuff
 # force 256 color mode
@@ -29,23 +31,23 @@ setopt PROMPT_SUBST
 # Change hostname color on known hosts
 # I put this here, because host doesn't change during a session
 case ${HOST%%.*} in
-	my-Desktop) local host_color="${fg[yellow]}" ;;
-	my-Laptop)  local host_color="${fg[yellow]}" ;;
-	ensi-vpn-*) local host_color="${fg_bold[yellow]}" ;;
-	*)          local host_color="${fg_bold[red]}" ;;
+    my-Desktop) local host_color="${fg[yellow]}" ;;
+    my-Laptop)  local host_color="${fg[yellow]}" ;;
+    ensi-vpn-*) local host_color="${fg_bold[yellow]}" ;;
+    *)          local host_color="${fg_bold[red]}" ;;
 esac
 
-  # Color for decorations
-  local deco="%{${fg_bold[black]}%}"
+# Color for decorations
+local deco="%{${fg_bold[black]}%}"
 
-  # Change path color gieven user rights on it
-  if [[ -O "${PWD}" ]]; then # owner
+# Change path color gieven user rights on it
+if [[ -O "${PWD}" ]]; then # owner
     local path_color="${fg_no_bold[default]}"
-  elif [[ -w "${PWD}" ]]; then # can write
+elif [[ -w "${PWD}" ]]; then # can write
     local path_color="${fg_no_bold[blue]}"
-  else # other
+else # other
     local path_color="${fg_no_bold[red]}"
-  fi
+fi
 
 # No coloration
 #local nc="%{$reset_color%}"
@@ -89,3 +91,4 @@ vcs_info;
   PS1="%m ⚡ %$"
 
 }
+

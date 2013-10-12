@@ -2,6 +2,7 @@
 if [[ -x `which gls` ]]; then
     alias rls=`which ls`
     alias ls='gls -GFh --color=auto --hide="*.pyc"'
+    export LS_COLORS='ow=30;42';
 elif [[ $(uname) == 'FreeBSD' || $OSTYPE[1,6] == "darwin" ]]; then
     export CLICOLOR="yes"
     export LSCOLORS='ExfxcxdxbxEgEdabagacad'
