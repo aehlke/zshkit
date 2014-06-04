@@ -1,2 +1,4 @@
-. ~/src/manabi/bashrc
+if [[ -f ~/src/manabi/bashrc ]]; then
+    . ~/src/manabi/bashrc
+fi
 

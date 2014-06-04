@@ -1,4 +1,8 @@
 local mydir=`dirname $0`
 
-source $mydir/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+if [[ -f $mydir/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh ]]; then
+    source $mydir/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+elif [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
 

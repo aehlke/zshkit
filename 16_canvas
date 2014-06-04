@@ -1,4 +1,7 @@
-. /var/canvas/.bashrc
+if [[ -f /var/canvas/.bashrc ]]; then
+    . /var/canvas/.bashrc
+fi
+
 #alias ls="gls"
 #alias l="ls"
 #alias ll="ls -l"
