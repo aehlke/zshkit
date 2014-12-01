@@ -2,6 +2,7 @@
 
 alias t="tmux"
 
+alias agp='ag -G ".*\.py" --ignore-dir="migrations"'
 
 # Memory hogs using top and ps
 alias mem_hogs_top='top -l 1 -o rsize | head -30'
