@@ -6,3 +6,10 @@ elif [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
+if [[ -f $mydir/plugins/z/z.sh ]]; then
+    touch ~/.z
+    if [[ ! -f /usr/share/man/man1/z.1 ]]; then
+        sudo cp $mydir/plugins/z/z.1 /usr/share/man/man1/
+    fi
+    source $mydir/plugins/z/z.sh
+fi
